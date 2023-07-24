@@ -12,14 +12,22 @@
     <main>
         <h1>Coding Quiz Challenge</h1>
         <div class="timer"></div>
-        <button class="start">Start</button>
+        <button id="start" class="start-button">Start</button>
+        <button id="next">Next</button>
         <P> Try to answer the following coding questions withing the alotted time. If you answer the questions correctly
             then you can reach a high score. if you get incorrect answer there will be a penalty that is subtracted from
             your total time. Good luck!</P>
 
-            <div class="quiz"></div>
-            <div class="questions" class="hide"> 
-                <div id="question1"> How many primitive datatypes are there? </div>
+            <div class="container"></div>
+            <div class="question-container" class="hide">
+                <div id="questions"></div>
+                    <div id="question1"></div>
+                    <ul>
+                        <li class="choices1"></li>
+                        <li class="choices1"></li>
+                        <li class="choices1"></li>
+                        <li class="choices1"></li>
+                    </ul>
                 <div class="answers"></div>
                     <button class="button"></button>
                     <button class="button"></button>
