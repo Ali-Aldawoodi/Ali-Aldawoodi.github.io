@@ -52,30 +52,30 @@ function startQuiz() {
     }, 1000);   
 }
 
-// would i have to create an array of the choices then do a conditional where if the correct answer is chosen then
-
-let q1 = {
+// array of objects with questions. for loop for 
+let qAndA = [{
         question: "How many primitive datatypes are there?",
         choices: ['1', '2', '3', '4'],
         answer: '4',
-    };
+    },
+    {
+        question: "How many primitive datatypes are there?",
+        choices: ['1', '2', '3', '4'],
+        answer: '4',
+    },
+    {
+        question: "How many primitive datatypes are there?",
+        choices: ['1', '2', '3', '4'],
+        answer: '4',
+    },
+    {
+        question: "How many primitive datatypes are there?",
+        choices: ['1', '2', '3', '4'],
+        answer: '4',
+    },
+    ];
 
-    function present1(q1) {
-         let question1Div = document.getElementById('question1');
-        question1Div.textContent = q1.question;
-        
-        let q1Choices = document.querySelector(".choices1");
-
-        q1Choices.forEach(function(element, index){
-            element.textContent = q1.choices[index];
-        });
-
-      
-    };
-
-    console.log(q1.choices)
-   
-    present1(q1);
+    
 
     //special functions
     
