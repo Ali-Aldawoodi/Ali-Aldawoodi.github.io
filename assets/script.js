@@ -26,19 +26,48 @@
 // I need to tally the scores throughout the quiz and give a total at the end. as well as an option to save the score and intials. (local storage)
 // ```
 
-
+// after i click start i want the question to populate
+    // button elements and event listener. functoin that start time, 
+    //i have to connect the start button to the first question. How do I connect the clicking of the start button to the first question?
+// conditional statement that runs through eacch question and lets you know what question your on. 
+// when user clicks an answer it moves on and if incorrect it deducts time. display next question. 
+//when game ends, populate score, time ends, highscores, hide last question, and input to add initials .
 
 //variables
 let timer = document.querySelector(".timer");
 let startButton = document.querySelector(".start");
 let questionContainerEl = document.querySelector(".question-container");
 
-//functions
-start.addEventListener("click", startQuiz)
 
-function startQuiz() {
-    start.classList.add('hide');
-    questionContainerEl.classList.remove('hide');
+
+//functions
+// array of objects with questions. for loop for
+
+let qAndA = [{
+        question: "How many primitive datatypes are there?",
+        choices: ['1', '2', '3', '4'],
+        answer: '4',
+    },
+    {
+        question: "How do we notate values of an array?",
+        choices: ['{}', '[]', '()', '//'],
+        answer: '4',
+    },
+    {
+        question: "How do we notate JQuery?",
+        choices: ['>', '<', '?', '$'],
+        answer: '4',
+    },
+    {
+        question: "How many boolean values are ther?",
+        choices: ['1', '2', '3', '4'],
+        answer: '4',
+    },
+    ];
+
+    start.addEventListener("click", startQuiz)
+    function startQuiz() {
+    // start.classList.add('hide');
     let timeLeft = 59;
     let totalTimer = setInterval(function () {
         if (timeLeft > 0) {
@@ -52,30 +81,25 @@ function startQuiz() {
     }, 1000);   
 }
 
-// array of objects with questions. for loop for 
-let qAndA = [{
-        question: "How many primitive datatypes are there?",
-        choices: ['1', '2', '3', '4'],
-        answer: '4',
-    },
-    {
-        question: "How many primitive datatypes are there?",
-        choices: ['1', '2', '3', '4'],
-        answer: '4',
-    },
-    {
-        question: "How many primitive datatypes are there?",
-        choices: ['1', '2', '3', '4'],
-        answer: '4',
-    },
-    {
-        question: "How many primitive datatypes are there?",
-        choices: ['1', '2', '3', '4'],
-        answer: '4',
-    },
-    ];
+let currentQuestion = {
+    if (qAndA[0].question) {
+        
+    }
+}
 
-    
+
+
+
+
+
+    for (let index = 0; index < qAndA.length; index++) {
+        const element = qAndA[index];
+        
+        if (start) {
+            qAndA[0].question.textContent;
+        }
+        
+    }
 
     //special functions
     
