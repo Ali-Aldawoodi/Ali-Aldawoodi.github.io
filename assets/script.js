@@ -1,4 +1,5 @@
 let startButton = document.querySelector(".start-button");
+var words = document.querySelector(".words-fill");
 var isWin = false;
 var timerCount = document.querySelector(".timer-countdown")
 var lose = document.querySelector(".lose-game")
@@ -69,12 +70,12 @@ let qAndA = [{
 
 
 function winGame(){
-    textContent= "You won";
+    words.textContent= "You won";
     winCounter++;
 }
 
 function loseGame() {
-    textContent = "Game over";
+    words.textContent = "Game over";
     loseCounter++;
 }
 
@@ -92,6 +93,7 @@ function startTimer() {
     if (timerElement === 0) {
       clearInterval(timerReset);
       loseGame();
+      startQuiz();
     }
   }, 1000);
 };
@@ -163,6 +165,7 @@ function displayNextButton(){
 console.log(populateQuestion)
 
 startButton.addEventListener("click", startGame);
+
 
 nextButton.addEventListener('click', ()=> {
     if(currentQuestionIndex < qAndA.length){
