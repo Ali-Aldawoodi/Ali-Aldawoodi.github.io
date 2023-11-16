@@ -1,5 +1,10 @@
 let timer = document.querySelector(".timer");
-let startButton = document.querySelector(".start");
+let startButton = document.querySelector(".start-button");
+var isWin = false;
+var timerCount;
+var timerElement = document.querySelector(".timer-countdown")
+
+
 
 let qAndA = [{
         question: "How many primitive datatypes are there?",
@@ -50,6 +55,32 @@ let qAndA = [{
 
   let currentQuestionIndex = 0;
   let score = 0;
+
+  function startGame() {
+    isWin = false;
+    timerCount = 60;
+
+    startTimer();
+};
+
+function startTimer() {
+  timer = setInterval(function() {
+    timerCount--;
+    timerElement.textContent = timerCount;
+    if (timerCount >= 0) {
+      if (isWin && timerCount > 0) {
+        clearInterval(timer);
+        winGame();
+      }
+    }
+    if (timerCount === 0) {
+      clearInterval(timer);
+      loseGame();
+    }
+  }, 1000);
+};
+
+
 
   function startQuiz() {
     currentQuestionIndex = 0;
@@ -114,6 +145,8 @@ function displayNextButton(){
 }
  
 console.log(populateQuestion)
+
+startButton.addEventListener("click", startGame);
 
 nextButton.addEventListener('click', ()=> {
     if(currentQuestionIndex < qAndA.length){
