@@ -64,10 +64,10 @@ let qAndA = [{
   function startGame() {
     isWin = false;
     timerElement = 60;
-
+    words.textContent = "";
     startTimer();
 };
-
+// I need to do the set wins and set losses next. When the timer runs out, game over still displays.
 
 function winGame(){
     words.textContent= "You won";
@@ -77,6 +77,7 @@ function winGame(){
 function loseGame() {
     words.textContent = "Game over";
     loseCounter++;
+    startQuiz();
 }
 
 
@@ -93,7 +94,7 @@ function startTimer() {
     if (timerElement === 0) {
       clearInterval(timerReset);
       loseGame();
-      startQuiz();
+      
     }
   }, 1000);
 };
