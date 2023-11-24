@@ -53,6 +53,8 @@ let qAndA = [{
     },
     ];
 
+
+
   let writtenQuestions = document.getElementById('written-questions');
   let allChoicesButtons = document.getElementById('all-choices');
   let nextButton = document.getElementById('next-button');
@@ -134,6 +136,23 @@ function resetState(){
     }
 }
 
+// function loseTime(){
+//     for (let index = 0; index < qAndA.length; index++) {
+        
+//         for (let j = 0; j < qAndA[j].choices.length; j++) {
+//             const element = qAndA[j].choices;
+            
+//             console.log(element)
+//         }
+
+//         if(element.correct === false) {
+//             timerElement --;
+//         }
+//     }
+// };
+
+// console.log(loseTime())
+
 function selectChoice(e) {
     let selectedBtn = e.target;
     let isCorrect = selectedBtn.dataset.correct === "true";
@@ -142,9 +161,14 @@ function selectChoice(e) {
         score ++;
     } else {
         selectedBtn.classList.add('incorrect');
+        timerElement -= 5;
     }
     nextButton.style.display = "block";
+
+    console.log(isCorrect)
 }
+
+
 
 function showScore(){
     resetState();
