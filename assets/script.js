@@ -4,6 +4,9 @@ var isWin = false;
 var timerCount = document.querySelector(".timer-countdown")
 var lose = document.querySelector(".lose-game")
 let resultElement = document.getElementById('answer-result')
+var initialInput = document.querySelector('#initials')
+var submitButton = document.getElementById('submit')
+var hiddenElement = document.querySelector('.hide')
 var winCounter = 0;
 var loseCounter = 0;
 
@@ -156,6 +159,10 @@ function selectChoice(e) {
 }
 
 
+function showElement(){
+    hiddenElement.style.display = 'block';
+}
+
 
 function showScore() {
     resetState();
@@ -173,6 +180,7 @@ function displayNextButton() {
         populateQuestion();
     } else {
         showScore();
+        showElement();
     }
 }
 
@@ -188,5 +196,24 @@ nextButton.addEventListener('click', () => {
         startQuiz();
     }
 });
+
+renderLastScore();
+
+
+function renderLastScore(){
+    var initals = localStorage.getItem("initials");
+    var score = localStorage.getItem("score");
+
+}
+
+submitButton.addEventListener("click", function(event){
+    event.preventDefault();
+
+    var initials = initialInput.value;
+
+    localStorage.setItem('initials', initials);
+    localStorage.setItem('score', score);
+    renderLastScore();
+})
 
 startQuiz();
