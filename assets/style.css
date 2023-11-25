@@ -2,6 +2,8 @@ body {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
+    background-color: aqua;
+    color: blueviolet;
 }
 
 .hide {
@@ -18,9 +20,28 @@ body {
 #all-choices .btn {
     color: white;
     background-color: purple;
+    margin-top: 5%;
 }
 
 #next-button {
     color: white;
     background-color: purple;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 300%;
+}
+
+#written-questions {
+    margin-top: 5%;
+    font-size: 130%;
+}
+
+.timer-countdown {
+    font-size: 150%;
+}
+
+.timer-static {
+    font-size: 150%;
 }
