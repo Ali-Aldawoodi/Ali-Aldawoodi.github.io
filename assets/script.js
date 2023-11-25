@@ -159,8 +159,12 @@ function selectChoice(e) {
 }
 
 
-function showElement(){
+function showElement() {
     hiddenElement.style.display = 'block';
+}
+
+function hideElement() {
+    hiddenElement.style.display = 'none';
 }
 
 
@@ -174,7 +178,7 @@ function showScore() {
 }
 
 function displayNextButton() {
-  
+
     currentQuestionIndex++;
     if (currentQuestionIndex < qAndA.length) {
         populateQuestion();
@@ -185,7 +189,10 @@ function displayNextButton() {
 }
 
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", () => {
+    startGame();
+    startButton.disabled = true;
+});
 
 
 nextButton.addEventListener('click', () => {
@@ -194,19 +201,20 @@ nextButton.addEventListener('click', () => {
     } else {
         startGame();
         startQuiz();
+        hideElement();
     }
 });
 
 renderLastScore();
 
 
-function renderLastScore(){
+function renderLastScore() {
     var initals = localStorage.getItem("initials");
     var score = localStorage.getItem("score");
 
 }
 
-submitButton.addEventListener("click", function(event){
+submitButton.addEventListener("click", function (event) {
     event.preventDefault();
 
     var initials = initialInput.value;
